@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    render json: params 
   end
 
   def new

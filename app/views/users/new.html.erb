@@ -1,6 +1,22 @@
 <h1>New User</h1>
 
-<%= form_with model: @user %>
+<%= form_with model: @user, local: true do | sign_in_form | %>
+    <p> 
+      <%= sign_in_form.label :first_name %>
+      <%= sign_in_form.text_field :first_name %>
+    </p>
+    <p> 
+      <%= sign_in_form.label :email %>
+      <%= sign_in_form.email_field :email %>
+    </p>
+    <p> 
+      <%= sign_in_form.label :password %>
+      <%= sign_in_form.password_field :password %>
+    </p>
+    
+      <%= sign_in_form.submit "Submit" %>
+
+<% end %> 
 
 
 
