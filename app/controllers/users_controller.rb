@@ -6,7 +6,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    render json: params 
+    @user = User.new(@user_params)
+    @user.save
+
+    redirect_to @user
   end
 
   def new
@@ -23,4 +26,10 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
+  private 
+  def user_params
+    @user = User.new(params.require(:user).permit(:first_name, :email_address, :password))
+  end
+
 end

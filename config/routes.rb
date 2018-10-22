@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get 'users', to: 'users#index'
     post 'users', to: 'users#create'
     get 'users/new', to: 'users#new'
-    get 'users/id', to: 'users#show'
+    get 'users/id', to: 'users#show', as: "user"
     get 'users/id/edit', to: 'user#edit'
     patch 'users/id', to: 'user#update'
     put 'users/id', to: 'user#update'
